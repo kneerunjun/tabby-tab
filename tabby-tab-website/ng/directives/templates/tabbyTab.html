@@ -1,0 +1,14 @@
+﻿<div>
+    <input ng-class="{true:'tabby-tab-button btn btn-default btn-lg', false:'btn btn-default btn-lg'}[t.tabIndex==activeTabIndex]"
+           ng-click='onHit(t)'
+           type='button'
+           value='{{t.tabTitle}}'
+           ng-repeat='t in tabs' blur-on-hit />
+    <!--<tab-button ng-class="{true:'tabby-tab-button'}[t.tabIndex==activeTab]"  tab-button-hit='buttonHit(index)'></tab-button>-->
+    <br><br>
+    <div class="well">
+        <div ng-show='t.tabIndex==activeTabIndex' ng-repeat='t in tabs' class='tabby-tab-container' content-inject>
+
+        </div>
+    </div>
+</div>

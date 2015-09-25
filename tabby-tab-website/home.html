@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-1.9.0.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="Content/custom.css" rel="stylesheet" />
+    <script src="ng/modules/myApp.js"></script>
+    <script src="ng/controllers/mainController.js"></script>
+    <script src="ng/directives/tabbyTab.js"></script>
+    <script src="ng/directives/contentInject.js"></script>
+    <script src="ng/directives/blurOnHit.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="mainController">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="jumbotron">
+                <h1>Tabby-Tab</h1>
+                <p>
+                    When you are done wrestling with the bootstrap tab control and fitting your angular code,
+                    call it a day. It has been good learning experimenting ! Here is what you can just plug in and get your tab control working in a jiffy
+                </p>
+                <p><a class="btn btn-primary btn-lg" ng-click="gotoWikiPage()">Learn more</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class=" col-md-8 col-md-offset-2">
+            <tabby-tab cloak='user.role'>
+                <br>
+                <div class='tabby-tab-content' tabby-title='Settings and Configuration'>
+                    <p>
+                        TAB NUMBER 1 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, a, recusandae ea velit aliquid voluptatibus dolorum deleniti dolores sapiente delectus veniam praesentium quae modi. Vitae.
+                    </p>
+                </div>
+                <div class='tabby-tab-content' tabby-title='Administration'>
+                    <p>
+                        TAB NUMBER 2 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit voluptatum iure illum repudiandae vero quia at impedit aliquid similique est.
+                    </p>
+                </div>
+                <div class='tabby-tab-content' tabby-title='Miscelleneous'>
+                    <p>
+                        TAB NUMBER 3 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, molestias.
+                    </p>
+                </div>
+                <div class='tabby-tab-content' tabby-title='Developer'>
+                    <p>
+                        TAB NUMBER 4 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore nesciunt voluptatibus voluptatum eum assumenda. Repudiandae, est, laudantium, beatae, velit voluptatum dicta soluta quaerat nostrum blanditiis similique id possimus.
+                    </p>
+                </div>
+            </tabby-tab>
+        </div>
+    </div>
+</body>
+</html>
