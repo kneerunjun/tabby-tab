@@ -4,7 +4,7 @@
             restrict: "E",
             templateUrl: "/ng/directives/templates/tabbyTab.html",
             scope: {
-                cloak: "=",
+                userAccess: "=",
             },
             controller: function ($scope) {
                 console.log("this is from inside the controller")
@@ -27,13 +27,18 @@
                 console.log('we have found' + tabbyContent.length + ' number of tab content transcluded in the tabby tab');
                 console.log('we are preparing to set the tabs for the content divs now');
                 for (var i = 0; i < tabbyContent.length; i++) {
-                    scope.tabs.push(
-                      {
-                          tabIndex: i,
-                          tabTitle: $(tabbyContent[i]).attr('tabby-title'),
-                          active: false,
-                          content: tabbyContent[i]
-                      });
+                    //need filter all other tabs when the access is not appropriate
+                    var accessAttr = $(tabbyContent[i]).attr('tabby-access');
+                    var tabAccess = accessAttr == null ? 0 : parseInt(accessAttr);
+                    if (scope.userAccess >= tabAccess) {
+                        scope.tabs.push({
+                            tabIndex: i,
+                            tabTitle: $(tabbyContent[i]).attr('tabby-title'),
+                            active: false,
+                            content: tabbyContent[i]
+                        });
+                    }
+
                 }
                 console.log('now logging the added tabs into the scope');
                 console.log(scope.tabs);
